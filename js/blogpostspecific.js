@@ -1,4 +1,6 @@
-const detailContainer= document.querySelector(".blog_post_details");
+import { urlPostBase, urlAllPostsBase, postsEndpoint } from "/js/source.js";
+
+const specificBlogPostContainer = document.querySelector(".blog_post_specific");
 
 const queryString = document.location.search;
 
@@ -6,31 +8,34 @@ const params = new URLSearchParams(queryString);
 
 const id = params.get("id");
 
-const urlSpecific = "http://projectexam.local/wp-json/wp/v2/posts/" + id; 
+console.log(id);
 
-async function fetchPost () {
+const urlSpecific = urlPostBase + "/" + id;
+
+console.log(urlSpecific);
+
+async function fetchGame() {
 
     try {
-        const response = await fetch (urlSpecific)
-        const details = await response.json();
+        const response = await fetch(urlSpecific);
+        const specificBlogPost = await response.json();
 
-        console.log (details);
+        console.log(specificBlogPost);
 
-        createHTML(details);
-
+        createHtml(specificBlogPost);
+      
     }
-
     catch(error) {
-        console.log(error)
-        detailContainer.innerHTML = message ("error", error);
+        console.log(error);
+        specificBlogPostContainer.innerHTML = message("error", error);
     }
+    
 }
 
-fetchPost ();
+fetchGame();
 
-function createHTML(details) {
-    detailContainer.innerHTML += `<h1>${details.title.rendered}</h1>
-                                <div class="details_image> url('${details.content.rendered}</div>
-                                    <div class="details_text>${details.excerpt.rendered}</div>`
+function createHtml(specificBlogPost) {
+    specificBlogPostContainer.innerHTML = `<h1>${specificBlogPost.title.rendered}</h1>
+                                <div>${specificBlogPost.content.rendered}</div>
+                                <div>${specificBlogPost.excerpt.rendered}</div>`;
 }
-

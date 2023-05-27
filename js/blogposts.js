@@ -1,51 +1,67 @@
+
 import { 
     apiBase,
     postsEndpoint,
-    allPostsEndpoint,
-    urlPostBase,
     urlAllPostsBase,
-    fullPostURLExample
+    urlPostBase,
+    allPostsEndpoint,
+   
   } from "/js/source.js"
  
-const blogPostContainer = document.querySelector(".blog_post_container");
-
-const blogPostTitleContainer = document.querySelector(".post_title");
-
-const blogPostContentContainer = document.querySelector(".post_content");
 
 
-
+// TRY TO SHOW PUBLISHING DATE
 const event = new Date(Date.UTC(2023, 1, 20, 3, 0, 0));
 console.log(event.toLocaleString("en-GB"), {timeZone: "UTC"});
+// ------------------------------------------------------------
+
+const btn = document.getElementById("view_more_btn");
+
+btn.addEventListener('click', () => {
+  // 👇️ hide button
+  btn.style.display = 'none';
+
+  // 👇️ show div
+  const moreBlogPost = document.getElementById("more_posts");
+  moreBlogPost.style.display = 'block';
+});
+
+// VIEW MORE VISES OG FORSVINNER NÅR TRYKT PÅ
+// SKAL VISE RESTERENDE TO INNLEGG ^^ 
 
 
-async function fetchPosts () { 
+const resultsContainer = document.querySelector(".blog_post_container");
 
-    const response = await fetch (urlPostBase);
+async function fetchPosts() {
 
-    const results = await response.json();
+    try {
+        const response = await fetch(urlPostBase);
+        const json = await response.json();
 
-    const posts = results;
+        console.log(json);
 
-    for (let i = 0; i < posts.length; i++) {
-                blogPostContainer.innerHTML += 
-                `<a href="blogpostspecific.html?id=${posts[i].id}"class="blog_post_container">
-                    <div class ="post_title"> 
-                     <h1>${posts[i].title.rendered}</h1>
-                    </div>
-                    <div class="post_content"> 
-                    
-                     <div>${posts[i].content.rendered}</div>
-                    </div> <p class="post_date">${posts[i].date}</p> 
-                    <p>${posts[i].excerpt.rendered}<p> </div>
-                </a>`;
-                
-}
+        resultsContainer.innerHTML = "";
+
+        const posts = json;
+
+        posts.forEach(function(post)  
+        
+        {
+            resultsContainer.innerHTML += `<a href="blogpostspecific.html?id=${post.id}">
+                                               <h1>${post.title.rendered}</h1>  
+                                                <div>${post.content.rendered}</div>
+                                                <div>${post.excerpt.rendered}</div>   
+                                            </a>`;
+        });
+      
+    }
+    catch(error) {
+        console.log(error);
+        resultsContainer.innerHTML = console.log("error has occured");
+    }
+    
 }
 
 fetchPosts();
 
-export {
-    fetchPosts
-}
 

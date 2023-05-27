@@ -1,40 +1,40 @@
-export { 
-    apiBase,
-    postsEndpoint,
-    allPostsEndpoint,
-    urlPostBase,
-    eightPostsBase,
-    urlAllPostsBase,
-    fullPostURLExample,
-    eightPoststURLExample,
-  }
+// export { 
+//     apiBase,
+//     postsEndpoint,
+//     allPostsEndpoint,
+//     urlPostBase,
+//     eightPostsBase,
+//     urlAllPostsBase,
+//     fullPostURLExample,
+//     eightPoststURLExample,
+//   }
 
-const apiBase = "http://projectexam.local/wp-json/wp/v2"
+export const apiBase = "http://projectexam.local/wp-json/wp/v2";
 
-const postsEndpoint = "/posts"
+export const postsEndpoint = "/posts";
 
-const allPostsEndpoint = "/?per_page=12";
+export const allPostsEndpoint = "/?per_page=12";
 
-const eightPoststEndpoint = "/?per_page=8"
+export const eightPoststEndpoint = "/?per_page=8";
 
-const mediaEndpoint = "/media";
-
-
-// -----------------------------------------------------------
-
-const urlPostBase = apiBase + postsEndpoint;
-
-const urlAllPostsBase = apiBase + allPostsEndpoint;
-
-const eightPostsBase = urlPostBase + eightPoststEndpoint;
+export const mediaEndpoint = "/media";
 
 
 // -----------------------------------------------------------
 
-const fullPostURLExample = "http://projectexam.local/wp-json/wp/v2/posts"
+export const urlPostBase = apiBase + postsEndpoint;
 
-const allPostsURLExample = "http://projectexam.local/wp-json/wp/v2/posts/?per_page=12";
+export const urlAllPostsBase = urlPostBase + allPostsEndpoint;
 
-const mediaURLExample = "http://projectexam.local/wp-json/wp/v2/media";
+export const eightPostsBase = urlPostBase + eightPoststEndpoint;
 
-const eightPoststURLExample = "http://projectexam.local/wp-json/wp/v2/posts/?per_page=8"
+
+// -----------------------------------------------------------
+
+export const fullPostURLExample = "http://projectexam.local/wp-json/wp/v2/posts"
+
+export const allPostsURLExample = "http://projectexam.local/wp-json/wp/v2/posts/?per_page=12";
+
+export const mediaURLExample = "http://projectexam.local/wp-json/wp/v2/media";
+
+export const eightPoststURLExample = "http://projectexam.local/wp-json/wp/v2/posts/?per_page=8"

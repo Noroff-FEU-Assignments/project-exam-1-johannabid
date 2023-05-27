@@ -14,6 +14,7 @@
     <script src="fonts/Roboto-Bold.ttf" crossorigin="anonymous"></script>
     <script src="fonts/HelveticaNeueLight.ttf" crossorigin="anonymous"></script>
     <script src="js/blogposts.js" type="module" defer=""></script>
+    <script src="js/fetchmoreposts.js" type="module" defer =""></script>
 
     <script>
       (function (h, o, t, j, a, r) {
@@ -38,10 +39,25 @@
 
     <main>
       <h1>Blog posts</h1>
-      <div class="blog_post_container">
-        <div class="post_date"></div>
-        <div class="post_title"> </div>
-        <div class="post_content"></div>
+      <section> 
+       <div class="blog_post_container">
+        <div class="blog_post_content">
+         <div class="post_date"></div>
+         <div class="post_title"> </div>
+         <div class="post_content"></div>
+        </div>
+       </div>
+      </section>
+     
+      <div class="button"> 
+       <p id="view_more_btn">View more</p>
+       <section> 
+        <div class="blog_post_container_more_posts" id="more_posts"> 
+
+        </div>
+      </section>
+      </div>
+      </div>
         <!--MOB VER.-->
         <!-- 10 BLOGGINNLEGG HER
       3 innlegg
@@ -51,7 +67,8 @@
       3 innlegg
 
       "view more"-knapp
-      --></div>
+      -->
+      
     </main>
     <footer>
     <div class="footer_elements"> 
