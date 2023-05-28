@@ -450,9 +450,16 @@ button {
     display: flex;
 }
 
+.form_box {
+    margin: 45px;
+}
+
+.message_box {
+    margin-top: 27px;
+}
+
 .form_text {
     margin: 0px;
-    padding-left: 10px;
 }
 
 .submit_button {
@@ -501,6 +508,10 @@ form {
 }
 
 #message {
+    
+}
+
+.message_text {
     height: 240px;
 }
 
