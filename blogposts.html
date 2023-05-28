@@ -15,7 +15,6 @@
     <script src="fonts/HelveticaNeueLight.ttf" crossorigin="anonymous"></script>
     <script src="js/blogposts.js" type="module" defer=""></script>
     <script src="js/fetchmoreposts.js" type="module" defer =""></script>
-
     <script>
       (function (h, o, t, j, a, r) {
         h.hj =
@@ -34,7 +33,28 @@
   </head>
   <body class="blog_posts_page">
     <header>
-      <a href="index.html"><img src="/images/Logo.svg"></img></a>
+      <div>
+        <a href="index.html"><img src="/images/Logo.svg"></img></a>
+       </div>
+       <div class ="navigation"> 
+   <!-- HAMBURGER -->
+       <ul>
+        <div class="navigation_sites"> 
+        <div> 
+         <a href="index.html"><li>Home</li></a>
+        </div>
+        <div class="current_page"> 
+        <li>Blog posts</li>
+        </div>
+        <div> 
+        <a href="about.html"><li>About</li></a>
+        </div>
+        <div> 
+        <a href="contact.html"><li>Contact</li><a> 
+        </div>
+        </div>
+       </ul>
+       </div> 
     </header>
 
     <main>
@@ -50,7 +70,7 @@
       </section>
      
       <div class="button"> 
-       <p id="view_more_btn">View more</p>
+       <button id="view_more_btn" onclick="toggleShowing()">View more</button>
        <section> 
         <div class="blog_post_container_more_posts" id="more_posts"> 
 

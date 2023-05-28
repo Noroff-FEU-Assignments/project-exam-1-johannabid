@@ -27,7 +27,8 @@ main {
 }
 
 .current_page,
-li:hover {
+li:hover,
+.hamburger_menu div:hover {
     text-decoration-line: underline; 
 }
 
@@ -42,6 +43,7 @@ li:hover {
 
 .hamburger_menu {
     justify-content: space-evenly;
+    font-family: "Roboto Regular";
 }
 
 .hamburger {
@@ -52,8 +54,12 @@ div .hamburger {
     margin-top: 120px;
 }
 
-.logo_header {
+.navigation {
     margin-top: 22px;
+}
+
+.hamburger_menu {
+    gap: 30px;
 }
 
 .logo_and_navbar {
@@ -76,28 +82,13 @@ nav, #menu_checkbox {
 
 .hamburger_icon {
     font-size: 30px;
+    text-align: center;
 }
 
 .highlighted_text_nav,
 .submit_button {
     font-weight: 1000;
  }
-
- /* nå vises ikke innholdet i hamburgeren når skjermen overskrider en bredde på 725px*/
- /* hamburger og innhold vises og fungerer under 725px*/
-
- /* hvordan få kun innhold i hamburger til å vises over 725px */
-
- .label {
-    margin-left: 300px;
- }
- @media (min-width: 900px) {
-    label { 
-    display: none;
-  }
- }
-
-
 /* HEADER END */
 
 h1, 
@@ -258,12 +249,54 @@ main {
         margin: auto;
     }
 
+    /* label { 
+        display: none;
+    } */
+        /* .hamburger_icon {
+            display: none;
+        }
+
+ .hamburger_menu {
+    display: flex;
+    visibility: visible;
+ } */
+    
 }
+
+@media (max-width:970px) { 
+.hamburger_menu {
+ flex-direction: column;
+ text-align: center;
+}
+}
+
+@media (max-width:800px) {
+    .hamburger_icon,
+    .hamburger_menu  {
+        margin-left: -100px;
+    }
+}
+
+@media (max-width:700px) {
+    .hamburger_icon,
+    .hamburger_menu  {
+        margin-left: -200px;
+    }
+}
+
+@media (max-width:590px) {
+    .hamburger_icon,
+    .hamburger_menu  {
+        margin-left: -300px;
+    }
+}
+
+
 
 /* CAROUSEL EXPERIMENTING */
 
 button {
-    height: 20px;
+    /* height: 20px; */
     margin: auto;
 }
 
@@ -445,7 +478,6 @@ input {
 
 label {
     display: block;
-    padding: 10px;
     font-family: Arial, Helvetica, sans-serif;
     width: 600px;
   
@@ -560,3 +592,43 @@ a  {
 }
 
 /* BLOG POST-2 END */
+
+/*  MODAL EXPERIMENTING */
+
+.modal_content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal_img {
+    width: 80%;
+    max-width: 700px;
+  }
+  .modal_txt {
+    margin-top: 1em;
+  }
+  .close {
+    position: absolute;
+    top: 1em;
+    right: 1.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+  }
+  .modal.appear {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .modal.appear .modal_img,
+  .modal.appear .modal_txt {
+    animation: zoom 0.3s linear;
+  }
+  @keyframes zoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }

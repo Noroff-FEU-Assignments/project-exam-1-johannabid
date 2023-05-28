@@ -15,16 +15,17 @@ const event = new Date(Date.UTC(2023, 1, 20, 3, 0, 0));
 console.log(event.toLocaleString("en-GB"), {timeZone: "UTC"});
 // ------------------------------------------------------------
 
-const btn = document.getElementById("view_more_btn");
+// const btn = document.getElementById("view_more_btn");
 
-btn.addEventListener('click', () => {
-  // 👇️ hide button
-  btn.style.display = 'none';
+// btn.addEventListener('click', () => {
+//   // 👇️ hide button
+//   btn.style.display = "none";
 
-  // 👇️ show div
-  const moreBlogPost = document.getElementById("more_posts");
-  moreBlogPost.style.display = 'block';
-});
+//   // 👇️ show div
+//   const morePostsContainer = document.querySelector(".blog_post_container_more_posts");
+// //   const moreBlogPost = document.getElementById("more_posts");
+//   morePostsContainer.style.display = "block";
+// });
 
 // VIEW MORE VISES OG FORSVINNER NÅR TRYKT PÅ
 // SKAL VISE RESTERENDE TO INNLEGG ^^ 

@@ -28,20 +28,44 @@
         })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
       </script>
   </head>
-  <body>
+  <body class="blog_posts_page">
 
     <header>  
          
-     <div>
-  <body class="blog_posts_page">
-    <header>
-      <a href="index.html"><img src="/images/Logo.svg"></img></a>
-     </div>
+      <div>
+        <a href="index.html"><img src="/images/Logo.svg"></img></a>
+       </div>
+       <div class ="navigation"> 
+   <!-- HAMBURGER -->
+       <ul>
+        <div class="navigation_sites"> 
+        <div> 
+         <a href="index.html"><li>Home</li></a>
+        </div>
+        <div class="current_page"> 
+        <li>Blog posts</li>
+        </div>
+        <div> 
+        <a href="about.html"><li>About</li></a>
+        </div>
+        <div> 
+        <a href="contact.html"><li>Contact</li><a> 
+        </div>
+        </div>
+       </ul>
+       </div> 
 
     </header>
 
     <main>  
-      <section class="blog_post_specific"> 
+      <section class="blog_post_specific" id="modal"> 
+          <span class="close"><i class="fas-fa-times"></i></span>
+          <div class="blog_post_content" id="modal_content">
+           <div class="post_date"></div>
+           <span class="modal_text"></span>
+           <div class="post_title"> </div>
+           <div class="post_content" id="modal_img"></div>
+          </div>
        <div class="blog_post_details">
 
       </div>
