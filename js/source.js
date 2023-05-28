@@ -9,7 +9,7 @@
 //     eightPoststURLExample,
 //   }
 
-export const apiBase = "http://projectexam.local/wp-json/wp/v2";
+export const apiBase = "http://monaandlisa.no/wp-json/wp/v2";
 
 export const postsEndpoint = "/posts";
 
@@ -31,10 +31,10 @@ export const eightPostsBase = urlPostBase + eightPoststEndpoint;
 
 // -----------------------------------------------------------
 
-export const fullPostURLExample = "http://projectexam.local/wp-json/wp/v2/posts"
+export const fullPostURLExample = "http://monaandlisa.no/wp-json/wp/v2/posts"
 
-export const allPostsURLExample = "http://projectexam.local/wp-json/wp/v2/posts/?per_page=12";
+export const allPostsURLExample = "http://monaandlisa.no/wp-json/wp/v2/posts/?per_page=12";
 
-export const mediaURLExample = "http://projectexam.local/wp-json/wp/v2/media";
+export const mediaURLExample = "http://monaandlisa.no/wp-json/wp/v2/media";
 
-export const eightPoststURLExample = "http://projectexam.local/wp-json/wp/v2/posts/?per_page=8"
+export const eightPoststURLExample = "http://monaandlisa.no.local/wp-json/wp/v2/posts/?per_page=8"
